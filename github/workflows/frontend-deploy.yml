@@ -1,0 +1,49 @@
+name: Frontend Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Setup SSH key from GitHub Secrets
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.FRONTEND_SSH_KEY }}
+
+      # Install Docker & Docker Compose using official script
+      - name: Install Docker & Docker Compose
+        run: |
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh
+          sudo usermod -aG docker $USER
+          sudo curl -L "https://github.com/docker/compose/releases/download/v2.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          docker --version
+          docker-compose --version
+
+      # Build Frontend using docker-compose
+      - name: Build Frontend
+        run: |
+          echo "Building Frontend..."
+          docker-compose -f docker-compose/docker-compose.yml build
+
+      # Deploy to EC2 server
+      - name: Deploy to server
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@18.221.36.156 "
+            mkdir -p ~/frontend &&
+            cd ~/frontend &&
+            git clone https://github.com/Uliwazeer/uptime-kuma.git . || git pull &&
+            docker-compose -f docker-compose/docker-compose.yml pull &&
+            docker-compose -f docker-compose/docker-compose.yml up -d
+          "
