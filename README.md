@@ -1,6 +1,6 @@
 # 🚀 CI/CD Pipeline with GitHub Actions & Terraform
 
-### Workflow Explanation in 4 Key Points:
+## Workflow Explanation in 4 Key Points:
 
 1️⃣ Infrastructure (Terraform)
 Uses Terraform to create 3 resources on AWS: Backend server (Ubuntu 22.04) for Laravel + Frontend server (Ubuntu 22.04) for Node.js + MySQL RDS database - all in the same VPC and Region with public IPs for servers.
@@ -13,9 +13,10 @@ On any Push to main in Laravel repo → GitHub Actions triggers → Connects to 
 
 4️⃣ Monitoring & Alerts (CPU > 50%)
 Each server has a Cron Job running every 5 minutes → Checks CPU utilization → If exceeds 50% → Automatically sends Email to Admin with server details, running processes, and recommended Actions for resolution.
-
 In short: Terraform builds infrastructure → GitHub Actions deploys applications automatically → Monitoring watches performance and sends alerts - everything is automated! 🚀
-![unnamed](https://github.com/user-attachments/assets/e0922b29-cf8d-47b0-a53e-f3de0fdedddc)
+
+
+![unnamed](https://github.com/user-attachments/assets/0effbe7e-c2d8-4051-a367-6febadc50c88)
 
 
 ## 📋 Table of Contents
@@ -1039,67 +1040,99 @@ services:
 ```
 
 ## Create DB MYSQL By AWS RDS
-<img width="1366" height="704" alt="Screenshot (769)" src="https://github.com/user-attachments/assets/a2dab6b0-bfe8-4428-b0d7-782eb4709392" />
+<img width="1366" height="704" alt="Screenshot (769)" src="https://github.com/user-attachments/assets/8f63955f-210c-4cb6-bd25-2bd38e028ce7" />
+
 
 ## Create Key
-<img width="1366" height="664" alt="Screenshot (770)" src="https://github.com/user-attachments/assets/30a22177-d35c-4404-a5de-5731b4d400eb" />
+<img width="1366" height="664" alt="Screenshot (770)" src="https://github.com/user-attachments/assets/88a07124-8e6c-4665-92f4-18554e15a30e" />
+
 
 ## Create 2 EC2
-<img width="1366" height="704" alt="Screenshot (771)" src="https://github.com/user-attachments/assets/54d92535-1fca-48f2-b5ee-97ab019a48b5" />
+<img width="1366" height="704" alt="Screenshot (771)" src="https://github.com/user-attachments/assets/6599db52-1fae-4d74-bab3-b3e1180e06de" />
+
 
 ## Frontend Deploy on frontend EC2
-<img width="1366" height="683" alt="Screenshot (772)" src="https://github.com/user-attachments/assets/8a7d3735-290a-4711-bdbe-269f4fc97a17" />
+<img width="1366" height="683" alt="Screenshot (772)" src="https://github.com/user-attachments/assets/5c5fb2a0-93a1-41d9-bc10-0e70f4fceb07" />
+
 ## Login Page App
-<img width="1366" height="668" alt="Screenshot (790)" src="https://github.com/user-attachments/assets/fc7d3d43-0180-4fa0-b007-ff994a9aafe4" />
-<img width="1366" height="693" alt="Screenshot (773)" src="https://github.com/user-attachments/assets/7c823b7f-abb7-4326-a00a-223e5af26c16" />
+
+<img width="1366" height="693" alt="Screenshot (773)" src="https://github.com/user-attachments/assets/cdfbdb66-9271-417d-aefa-357d0b42263e" />
+
+<img width="1366" height="685" alt="Screenshot (792)" src="https://github.com/user-attachments/assets/ef2c064e-b5c6-467f-a312-7ceb0a1b82f2" />
+<img width="1366" height="683" alt="Screenshot (793)" src="https://github.com/user-attachments/assets/db795e82-b12c-4b0b-b71f-b9760b18a6e2" />
+
+
 ## EC2 Backend 
-<img width="1366" height="708" alt="Screenshot (775)" src="https://github.com/user-attachments/assets/6c6b3fa8-18b4-4cfe-889a-2bf174497a44" />
+<img width="1366" height="708" alt="Screenshot (775)" src="https://github.com/user-attachments/assets/e9530fd1-e1fd-4524-84ec-91f5bb932103" />
+
 ## PM2
-<img width="1366" height="708" alt="Screenshot (779)" src="https://github.com/user-attachments/assets/6f52c19f-d22b-4ae3-8b0d-0c005c831932" />
-<img width="1366" height="700" alt="Screenshot (777)" src="https://github.com/user-attachments/assets/c55e68af-0db7-4d1c-b919-c6204e9b03b8" />
-<img width="1366" height="713" alt="Screenshot (778)" src="https://github.com/user-attachments/assets/0b24e69c-6220-48d8-9d93-f8ede250f428" />
+<img width="1366" height="700" alt="Screenshot (777)" src="https://github.com/user-attachments/assets/c0f956ef-571f-432c-8863-755308e0bc6c" />
+<img width="1366" height="713" alt="Screenshot (778)" src="https://github.com/user-attachments/assets/07114433-ef7b-43bc-9780-e1009899c938" />
+<img width="1366" height="708" alt="Screenshot (779)" src="https://github.com/user-attachments/assets/4e501a49-0bce-4023-a647-202a0b1da69f" />
+
 ## Run Backend
-<img width="1366" height="704" alt="Screenshot (780)" src="https://github.com/user-attachments/assets/6c5f05e3-0b9d-4d74-ac67-4c5dd46cbd1c" />
+<img width="1366" height="704" alt="Screenshot (780)" src="https://github.com/user-attachments/assets/944af859-5e5e-447a-ab01-28b474c31db4" />
+
 ## Alarm
-<img width="1366" height="649" alt="Screenshot (788)" src="https://github.com/user-attachments/assets/0f7bf431-f8ed-43e3-ba22-965f19a059d8" />
+<img width="1366" height="649" alt="Screenshot (788)" src="https://github.com/user-attachments/assets/c2cab44a-207f-42dc-a008-919bec48908f" />
+
 ## Run Frontend
-<img width="1366" height="700" alt="Screenshot (781)" src="https://github.com/user-attachments/assets/26bbd5fb-5cfe-48e8-b45b-0bac0bcd292c" />
+<img width="1366" height="700" alt="Screenshot (781)" src="https://github.com/user-attachments/assets/6485149b-d8e6-422c-815d-26755289a010" />
+
+
 ## Backend Deploy
-<img width="1366" height="669" alt="Screenshot (795)" src="https://github.com/user-attachments/assets/a8dbfdec-4747-46cd-9cb8-29d1363167a8" />
+<img width="1366" height="669" alt="Screenshot (795)" src="https://github.com/user-attachments/assets/97ec546f-04e1-44b9-83a5-2bce6734105c" />
+
+
 ## Frontend Deploy
-<img width="1366" height="689" alt="Screenshot (796)" src="https://github.com/user-attachments/assets/f973ae99-0765-4231-9c8b-30cbdb4f4352" />
+<img width="1366" height="689" alt="Screenshot (796)" src="https://github.com/user-attachments/assets/fe91ed78-dc93-4fa0-9ef3-412580b6fecf" />
+
 ## Alarm Graph
-<img width="1366" height="668" alt="Screenshot (799)" src="https://github.com/user-attachments/assets/a96cb29a-e96e-418b-ad5b-e5712df2ee23" />
+<img width="1366" height="668" alt="Screenshot (799)" src="https://github.com/user-attachments/assets/7207f574-cf4f-4395-b57d-6b8020bca375" />
+
 ## Stress On Frontend EC2
-<img width="1366" height="704" alt="Screenshot (801)" src="https://github.com/user-attachments/assets/11436bc9-b1b8-4bfa-986b-093cc4969009" />
+<img width="1366" height="704" alt="Screenshot (801)" src="https://github.com/user-attachments/assets/f6bae291-d1f3-4e0f-9e91-dfecdb33b769" />
+
 ## Stress On Backend EC2
-<img width="1366" height="713" alt="Screenshot (802)" src="https://github.com/user-attachments/assets/f16b462a-14b4-42ee-adea-46190263b1dd" />
+<img width="1366" height="713" alt="Screenshot (802)" src="https://github.com/user-attachments/assets/e55b7c04-ee74-4b0b-bd2c-017853ab69bc" />
+
 ## Monitor Frontend EC2
-<img width="1366" height="683" alt="Screenshot (807)" src="https://github.com/user-attachments/assets/0ffd8f33-c652-49ed-8670-d5c5a2b2e908" />
+<img width="1366" height="683" alt="Screenshot (807)" src="https://github.com/user-attachments/assets/506899af-d892-44a4-9221-25e22153bd97" />
+
 ## Alarm On Gmail
-<img width="1366" height="672" alt="Screenshot (808)" src="https://github.com/user-attachments/assets/88ddf7f5-5557-432f-9c4b-0b36c4d96651" />
-<img width="1366" height="713" alt="Screenshot (809)" src="https://github.com/user-attachments/assets/b5307abb-3524-4081-bd68-e6de041e3696" />
+<img width="1366" height="672" alt="Screenshot (808)" src="https://github.com/user-attachments/assets/d5a1cb2d-bf66-4918-bc47-b46e4fe59cf8" />
+
+<img width="1366" height="713" alt="Screenshot (809)" src="https://github.com/user-attachments/assets/11625ff5-812d-455f-a5ae-5b3ad1ef5089" />
+
 ## DB SQL RDS
-<img width="1366" height="660" alt="Screenshot (811)" src="https://github.com/user-attachments/assets/81497b40-d9ca-4a28-a9cd-5b4da21390a1" />
+<img width="1366" height="660" alt="Screenshot (811)" src="https://github.com/user-attachments/assets/71b34c1b-2b52-4d92-96d0-6bc48973db27" />
+
 ## SNS Gmail
-<img width="1366" height="645" alt="Screenshot (813)" src="https://github.com/user-attachments/assets/54d726d3-a24e-4cdd-9c75-b71da61c10d5" />
+<img width="1366" height="645" alt="Screenshot (813)" src="https://github.com/user-attachments/assets/1470c4a6-f765-4deb-9767-dcdeffbcad4e" />
+
 ## CloudWatch
-<img width="1366" height="653" alt="Screenshot (814)" src="https://github.com/user-attachments/assets/49d02844-d363-420a-b1b3-fc924ad4ac77" />
+<img width="1366" height="653" alt="Screenshot (814)" src="https://github.com/user-attachments/assets/97726392-29df-4341-a8cb-40195c73383e" />
+
 ## Frontend and Backend EC2 Graph
-<img width="1366" height="640" alt="Screenshot (815)" src="https://github.com/user-attachments/assets/f8702b24-5960-40c2-b06d-3543aab32d07" />
+<img width="1366" height="640" alt="Screenshot (815)" src="https://github.com/user-attachments/assets/6b039b5c-98c1-4d40-9272-8bebc5d69139" />
+
 ## Secuity Group
-<img width="1366" height="656" alt="Screenshot (820)" src="https://github.com/user-attachments/assets/4c3c951f-8864-4413-8c0f-5491782f8f76" />
+<img width="1366" height="656" alt="Screenshot (820)" src="https://github.com/user-attachments/assets/ed0fa023-aa7c-47ea-b077-cd2c0af82289" />
+
 ## CloudWatch Agent
-<img width="1366" height="721" alt="Screenshot (832)" src="https://github.com/user-attachments/assets/6058906d-5fb3-4e3f-9dca-3d1d33eee7ab" />
-<img width="1366" height="713" alt="Screenshot (829)" src="https://github.com/user-attachments/assets/60c04b5d-b150-4f1f-ab6b-1c58561b67bb" />
-<img width="1366" height="713" alt="Screenshot (830)" src="https://github.com/user-attachments/assets/d4a18aa3-591f-4de1-beff-2c69db88769b" />
+<img width="1366" height="713" alt="Screenshot (830)" src="https://github.com/user-attachments/assets/1db50f41-a265-40c8-a6c4-895d940cd7aa" />
+<img width="1366" height="713" alt="Screenshot (829)" src="https://github.com/user-attachments/assets/5214441c-97c8-4475-9ec9-da47e60e0b86" />
+<img width="1366" height="721" alt="Screenshot (832)" src="https://github.com/user-attachments/assets/49631055-cbb2-4d6c-95d1-8b4ef89f4354" />
+
 ## Finally Running App
-![Whats![WhatsApp Image 2025-12-05 at 12 50 58_82f58ab6](https://github.com/user-attachments/assets/d978b3dd-3f0d-456e-bf4a-9002e876b9e2)
-App Image ![WhatsApp Image 2025-12-05 at 12 50 59_2437b5d2](https://github.com/user-attachments/assets/d1ec043c-70da-458b-8370-5ea470616b27)
-2025-12-05 at 12 50 58_77db473d](https://github.com/user-attachments/assets/43e9de5c-80db-4e28-9f3d-1fd5e78ff996)
+
+<img width="1366" height="685" alt="Screenshot (792)" src="https://github.com/user-attachments/assets/07383db8-fdbe-4d96-abdc-10b0d3a0b910" />
+<img width="1366" height="668" alt="Screenshot (790)" src="https://github.com/user-attachments/assets/cd24ae3f-56a0-41d6-be14-4573ec2fa153" />
+<img width="1366" height="683" alt="Screenshot (793)" src="https://github.com/user-attachments/assets/024dd56e-31c8-4326-96a8-baa510ea870f" />
 
 ## Destroy Resources
-<img width="1366" height="717" alt="Screenshot (821)" src="https://github.com/user-attachments/assets/3490623e-fa52-4214-9806-829178aa149b" />
+<img width="1366" height="717" alt="Screenshot (821)" src="https://github.com/user-attachments/assets/d7d247ec-b6ef-4446-b45e-e19c43337731" />
+
 
 
 
